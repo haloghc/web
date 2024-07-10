@@ -1,0 +1,1582 @@
+.public-page #MapApp {
+	background: url("load.gif") center 120px no-repeat !important;
+	max-width: 100% !important;
+	min-height: 300px;
+	margin: auto;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #000;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+
+#MapApp .volba-mapy, #MapApp .map-filter-volba-mapy-wrap {display: none !important;}
+
+
+#MapApp #Map {
+    width: 100%;
+    height: 480px;
+    border: 1px solid #d7d7d7 !important;
+    margin-bottom: 10px;
+}
+#MapApp .clear {
+	clear: both
+}
+#MapApp hr {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 0;
+	border-top: 1px solid #eee
+}
+.select2-container, .select2-results__option {
+	font-size: 14px;
+	color: #555
+}
+.leaflet-container {
+	background: #FAF8ED
+}
+.leaflet-top, .leaflet-bottom {
+	z-index: 990
+}
+#MapApp table {
+	border-collapse: separate
+}
+#MapApp .map-table-responsive {
+	width: 100%
+}
+#MapApp .map-table {
+	width: 100%;
+	text-align: left
+}
+#MapApp .map-table tr {
+	background-color: #fff
+}
+#MapApp .map-table tr:nth-of-type(odd) {
+	background-color: #f9f9f9;
+	border-top: 1px solid #000
+}
+#MapApp .map-table>tbody>tr th:first-child,
+#MapApp .map-table>tbody>tr td:first-child {
+	text-align: center
+}
+#MapApp .map-table>tbody>tr th {
+	background-color: #cacaca;
+	font-weight: normal;
+	padding: 10px !important;
+	text-align: left
+}
+#MapApp .map-table>tbody>tr td {
+	height: 40px;
+	padding: 5px 10px !important;
+	cursor: pointer
+}
+#MapApp .map-table>tbody>tr:hover td,
+#MapApp .map-table>tbody>tr.hover td {
+	background-color: #eee
+}
+#MapApp .map-table>tbody>tr td img {
+	width: 25px;
+	height: 25px;
+	margin: 4px 3px 4px 0
+}
+@media screen and (min-width: 992px) {
+#MapApp .map-table tr th: nth-child(1) {
+	width: 40px
+}
+#MapApp .map-table tr th:nth-child(2) {
+	width: 70px
+}
+#MapApp .map-table tr th:nth-child(3) {
+	width: 180px
+}
+#MapApp .stavby .map-table tr th:nth-child(4),
+#MapApp .opravy .map-table tr th:nth-child(4) {
+	width: 540px
+}
+#MapApp .stavby .map-table tr th:nth-child(5) {
+	width: 90px
+}
+#MapApp .opravy .map-table tr th:nth-child(5) {
+	width: 70px
+}
+#MapApp .stavby .map-table tr td:nth-child(6) {
+	width: 90px
+}
+#MapApp .opravy .map-table tr td:nth-child(6) {
+	width: 90px
+}
+#MapApp .stavby .map-table tr td:last-child {
+	width: 95px
+}
+#MapApp .odpocivky .map-table tr th:nth-child(4) {
+	width: 250px
+}
+#MapApp .odpocivky .map-table tr th:nth-child(5) {
+	text-align: right;
+	width: 70px
+}
+#MapApp .odpocivky .map-table tr td:nth-child(5) {
+	text-align: right
+}
+#MapApp .odpocivky .map-table tr th:nth-child(6) {
+	width: 60px
+}
+#MapApp .odpocivky .map-table tr th:nth-child(7) {
+	width: 320px
+}
+#MapApp .odpocivky .map-table tr th:last-child {
+	width: 160px
+}
+}
+#MapApp .map-table tr th:last-child {
+	width: 170px
+}
+#MapApp .stavby .map-table tr th:last-child {
+	width: 200px
+}
+#MapApp .map-table-responsive {
+	overflow-x: auto;
+	min-height: .01%
+}
+@media screen and (max-width: 767px) {
+#MapApp .map-table-responsive {
+	width: 100%;
+	margin-bottom: 15px;
+	overflow-y: hidden;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	border: 1px solid #ddd
+}
+}
+#MapApp .map-table .more {
+	line-height: 1px;
+	color: #004B8F;
+	display: inline-block
+}
+#MapApp .opravy .map-table .icon-mapapp-search,
+#MapApp .odpocivky .map-table .icon-mapapp-search {
+	padding-left: 8px
+}
+#MapApp .stavby .map-table .icon-mapapp-file-pdf {
+	padding-left: 8px
+}
+#MapApp .map-table .more:hover {
+	cursor: hand;
+	cursor: pointer
+}
+#MapApp #map-filter {
+	padding-top: 3px;
+	padding-bottom: 0px;
+	background: white
+}
+#MapApp .map-filter-inputs-wrap {
+	background: white;
+	width: 100%;
+	float: left
+}
+#MapApp .map-filter-buttons {
+	padding-bottom: 8px;
+	width: 15%;
+	float: right
+}
+#MapApp .filterForm .filter-button {
+	color: white;
+	cursor: pointer;
+	background-color: #009fe3;
+	box-shadow: none;
+	border: none;
+	width: 50%;
+	border-right: 1px solid white;
+	height: 30px;
+	float: left
+}
+#MapApp .filterForm .reset-button {
+	color: white;
+	cursor: pointer;
+	background-color: #999;
+	box-shadow: none;
+	border: none;
+	width: 50%;
+	border-left: 1px solid white;
+	height: 30px;
+	float: right
+}
+#MapApp .filterForm .filter-button:hover {
+	background-color: #2ec0ff
+}
+#MapApp .filterForm .reset-button:hover {
+	background-color: red
+}
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	border: 1px solid #ccc;
+	border-radius: 0;
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+}
+#MapApp .map-filter-inputs {
+	float: left;
+	width: 100%
+}
+#MapApp .map-filter-input {
+	padding-bottom: 8px;
+	width: 25%;
+	float: left
+}
+#MapApp .opravy .map-kraj,
+#MapApp .opravy .ap-kod-stavby,
+#MapApp .opravy .ap-kod-opravy {
+	width: 25%
+}
+#MapApp .map-h1 {
+	width: 25% !important
+}
+@media (max-width: 768px) {
+#MapApp .map-h1 {
+	width: 100% !important
+}
+#MapApp .volba-mapy {
+	width: 50% !important
+}
+#MapApp .volba-mapy.map-stavby {
+	padding-right: 0 !important
+}
+}
+#MapApp .map-h1 h1 {
+	margin: 0 0 6px 0 !important;
+	padding: 10px 0 0 15px !important;
+	background-color: #003063;
+	color: #fff;
+	font-size: 14px;
+	line-height: 14px;
+	width: 100%;
+	height: 34px;
+	font-weight: normal
+}
+.container #MapApp .map-h1 h1 {
+	margin: 0 !important;
+	padding: 0 !important;
+	height: 20px
+}
+.container #MapApp .map-h1 .h1 {
+	margin-bottom: 0px
+}
+#MapApp .volba-mapy {
+	float: left;
+	width: 100%
+}
+#MapApp .volba-mapy {
+	padding-bottom: 8px;
+	width: 25%;
+	float: left
+}
+#MapApp .volba-mapy {
+	color: #fff;
+	text-align: left;
+	padding-right: 5px
+}
+#MapApp .volba-mapy:last-child {
+	padding-right: 0
+}
+#MapApp .map-tunely {
+	padding-right: 0 !important
+}
+#MapApp .volba-mapy .button-volba-mapy {
+	color: #fff;
+	background: #009fe3;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-tap-highlight-color: #003063
+}
+#MapApp .volba-mapy .button-volba-mapy:hover {
+	background: #003063
+}
+#MapApp .volba-mapy .button-volba-mapy-ok {
+	background: #003063 url("https://apdos.roadmedia.cz/images/icons30/ok-blik.gif") no-repeat right 6px top 5px !important;
+	background-size: 20px 20px !important
+}
+#MapApp .map-kraj,
+#MapApp .map-text,
+#MapApp .map-dalnice {
+	padding-right: 5px
+}
+#MapApp .odpocivky .map-filter-input:last-child {
+	padding-right: 0
+}
+#MapApp .map-filter-input input {
+	font-size: 14px;
+	color: #888;
+	line-height: 1;
+	border: 1px solid #d7d7d7 !important;
+	width: 100%;
+	height: 33px !important;
+	padding: 7px 10px 6px 10px;
+	box-sizing: border-box;
+	border-radius: 30px !important;
+}
+@-moz-document url-prefix() {
+#MapApp .map-filter-input input {
+	padding: 8px 10px 7px 10px
+}
+}
+#MapApp span.select2 {
+	width: 100% !important
+}
+#MapApp .map-filter-input #Kraj,
+#MapApp .map-filter-input #Dalnice,
+#MapApp .map-filter-input #KodStavby {
+	width: 100%
+}
+#MapApp .map-filter-input.map-kraj .select2-selection,
+#MapApp .map-filter-input.map-dalnice .select2-selection,
+#MapApp .map-filter-input.map-kod-stavby .select2-selection,
+#MapApp .map-filter-input.map-stav .select2-selection {
+	background: #f1f2f5;
+	border: 1px solid #d7d7d7 !important;
+	width: 100%;
+	height: 33px;
+	box-sizing: border-box;
+	border-radius: 30px !important;
+	padding-top: 1px
+}
+#MapApp .select2-selection__arrow {
+	margin-top: 2px !important
+}
+#MapApp .select2-selection__clear {
+	font-size: 25px;
+	color: red
+}
+#MapApp .map_filter_checkboxes {
+	width: 100%;
+	margin-left: -1px
+}
+#MapApp .map_filter_checkboxes .map-ikon-filter-wrap {
+	float: left;
+	width: 2.844%;
+	height: 32px;
+	margin: -1px 0 9px 0;
+	text-align: center;
+	border: 1px solid white;
+	background: center center no-repeat
+}
+@media (max-width: 1200px) {
+#MapApp .map_filter_checkboxes .map-ikon-filter-wrap {
+	margin: -1px 0 6px 0
+}
+#MapApp .map-filter-buttons {
+	width: 15%
+}
+}
+@media (max-width: 1200px) {
+#MapApp .map_filter_checkboxes .map-ikon-filter-wrap {
+	width: 32px
+}
+}
+#MapApp .volba-mapy.map-stavby a::before {
+	content: "";
+	padding-right: 35px;
+	background: url("https://apdos.roadmedia.cz/icons/iko-bagr.png") 0 0 no-repeat;
+	background-size: 30px 15px
+}
+#MapApp .volba-mapy.map-opravy a::before {
+	content: "";
+	padding-right: 25px;
+	background: url("https://apdos.roadmedia.cz/icons/iko-opravy.png") 0 0 no-repeat;
+	background-size: 30px 15px
+}
+#MapApp .volba-mapy.map-odpocivky a::before {
+	content: "";
+	padding-right: 30px;
+	background: url("https://apdos.roadmedia.cz/icons/iko-odpocivky.png") 0 0 no-repeat;
+	background-size: 30px 15px
+}
+#MapApp .map_filter_wrapper.StavbyRealizace {
+	background: #D72525
+}
+#MapApp .map_filter_wrapper.StavbyPriprava {
+	background: #2981CA
+}
+#MapApp .map_filter_wrapper.StavbyProvoz {
+	background: #003063
+}
+#MapApp .map_filter_wrapper.StavbyRealizace,
+#MapApp .map_filter_wrapper.StavbyProvoz,
+#MapApp .map_filter_wrapper.StavbyPriprava {
+	display: block;
+	height: 31px;
+	float: left
+}
+#MapApp .map_filter_wrapper.StavbyRealizace,
+#MapApp .map_filter_wrapper.StavbyPriprava {
+	width: 30%
+}
+#MapApp .map_filter_wrapper.StavbyProvoz {
+	width: 22%
+}
+@media (max-width: 1200px) {
+#MapApp .map_filter_wrapper.StavbyRealizace,
+#MapApp .map_filter_wrapper.StavbyProvoz,
+#MapApp .map_filter_wrapper.StavbyPriprava {
+	margin-bottom: 5px;
+	width: 100%;
+	float: left;
+	display: block
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap,
+#MapApp .StavbyProvoz .map-ikon-filter-wrap,
+#MapApp .StavbyPriprava .map-ikon-filter-wrap {
+	width: 24%
+}
+}
+@media (max-width: 991px) {
+#MapApp .StavbyRealizace .map-ikon-filter-wrap,
+#MapApp .StavbyProvoz .map-ikon-filter-wrap,
+#MapApp .StavbyPriprava .map-ikon-filter-wrap {
+	width: 24.007%
+}
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(1),
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(1) {
+	width: 24%;
+	border-right: 0
+}
+#MapApp .StavbyProvoz .map-ikon-filter-wrap:nth-child(1) {
+	width: 28%;
+	border-right: 0
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(2),
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(2) {
+	width: 37%;
+	border-right: 0;
+	border-left: 0
+}
+#MapApp .StavbyProvoz .map-ikon-filter-wrap:nth-child(2),
+#MapApp .StavbyProvoz .map-ikon-filter-wrap:nth-child(3),
+#MapApp .StavbyProvoz .map-ikon-filter-wrap:nth-child(4),
+#MapApp .StavbyProvoz .map-ikon-filter-wrap:nth-child(5) {
+	width: 18%
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(3),
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(4),
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(3),
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(4) {
+	width: 13%;
+	border-right: 0;
+	border-left: 0
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(5),
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(5) {
+	width: 13%;
+	border-left: 0
+}
+#MapApp .StavbyProvoz .map-ikon-filter-wrap:nth-child(5) {
+	border-left: 0
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(5) .map-ikon,
+#MapApp .StavbyProvoz .map-ikon-filter-wrap:nth-child(5) .map-ikon,
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(5) .map-ikon {
+	border-right: 2px solid #fff;
+	margin-right: 2px !important
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(2) .map-ikon,
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(3) .map-ikon,
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(4) .map-ikon,
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(5) .map-ikon,
+#MapApp .StavbyProvoz .map-ikon-filter-wrap:nth-child(2) .map-ikon,
+#MapApp .StavbyProvoz .map-ikon-filter-wrap:nth-child(3) .map-ikon,
+#MapApp .StavbyProvoz .map-ikon-filter-wrap:nth-child(4) .map-ikon,
+#MapApp .StavbyProvoz .map-ikon-filter-wrap:nth-child(5) .map-ikon,
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(2) .map-ikon,
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(3) .map-ikon,
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(4) .map-ikon,
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(5) .map-ikon {
+	margin: 2px 0 0 0;
+	padding: 3px 0 2px 0;
+	border-top: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	border-left: 2px solid #fff
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(1) .map-ikon {
+	border-top: 2px solid #D72525;
+	border-bottom: 2px solid #D72525;
+	border-left: 2px solid #D72525;
+	padding: 4px 0 5px 0
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(1) .map-ikon:hover {
+	background: #D72525;
+	height: 30px
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(1).ok .map-ikon {
+	background: #D72525 url("https://apdos.roadmedia.cz/images/icons30/ok.png") no-repeat right top !important;
+	height: 30px
+}
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(1) .map-ikon {
+	border-top: 2px solid #2981CA;
+	border-bottom: 2px solid #2981CA;
+	border-left: 2px solid #2981CA;
+	padding: 4px 0 5px 0
+}
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(1) .map-ikon:hover {
+	background: #2981CA;
+	height: 30px
+}
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(1).ok .map-ikon {
+	background: #2981CA url("https://apdos.roadmedia.cz/images/icons30/ok.png") no-repeat right top !important;
+	height: 30px
+}
+#MapApp .StavbyProvoz .map-ikon-filter-wrap:nth-child(1) .map-ikon {
+	border-top: 2px solid #003063;
+	border-bottom: 2px solid #003063;
+	border-left: 2px solid #003063;
+	padding: 4px 0 5px 0
+}
+#MapApp .StavbyProvoz .map-ikon-filter-wrap:nth-child(1) .map-ikon:hover {
+	background: #003063;
+	height: 30px
+}
+#MapApp .StavbyProvoz .map-ikon-filter-wrap:nth-child(1).ok .map-ikon {
+	background: #003063 url("https://apdos.roadmedia.cz/images/icons30/ok.png") no-repeat right top !important;
+	height: 30px
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(2) .map-ikon:hover {
+	background: #E4A327
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(2).ok .map-ikon {
+	background: #E4A327 url("https://apdos.roadmedia.cz/images/icons30/ok.png") no-repeat right top !important
+}
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(2) .map-ikon:hover {
+	background: #875AD1
+}
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(2).ok .map-ikon {
+	background: #875AD1 url("https://apdos.roadmedia.cz/images/icons30/ok.png") no-repeat right top !important
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(3) .map-ikon:hover,
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(4) .map-ikon:hover,
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(5) .map-ikon:hover {
+	background: #D72525
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(3).ok .map-ikon,
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(4).ok .map-ikon,
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(5).ok .map-ikon {
+	background: #D72525 url("https://apdos.roadmedia.cz/images/icons30/ok.png") no-repeat right top !important
+}
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(3) .map-ikon:hover,
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(4) .map-ikon:hover,
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(5) .map-ikon:hover {
+	background: #2981CA
+}
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(3).ok .map-ikon,
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(4).ok .map-ikon,
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(5).ok .map-ikon {
+	background: #2981CA url("https://apdos.roadmedia.cz/images/icons30/ok.png") no-repeat right top !important
+}
+@media (max-width: 500px) {
+#MapApp .StavbyRealizace .map-ikon-filter-wrap: nth-child(3),
+#MapApp .StavbyRealizace .map-ikon-filter-wrap: nth-child(4),
+#MapApp .StavbyRealizace .map-ikon-filter-wrap: nth-child(5),
+#MapApp .StavbyPriprava .map-ikon-filter-wrap: nth-child(3),
+#MapApp .StavbyPriprava .map-ikon-filter-wrap: nth-child(4),
+#MapApp .StavbyPriprava .map-ikon-filter-wrap: nth-child(5) {
+	display: none
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(1),
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(2),
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(1),
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(2) {
+	width: 50%
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(2) div {
+	border-right: 2px solid #D72525
+}
+#MapApp .StavbyRealizace .map-ikon-filter-wrap:nth-child(2) div div {
+	border-right: 2px solid #fff
+}
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(2) div {
+	border-right: 2px solid #2981CA
+}
+#MapApp .StavbyPriprava .map-ikon-filter-wrap:nth-child(2) div div {
+	border-right: 2px solid #fff
+}
+}
+#MapApp .map-ikon-filter-wrap .StavbyProvoz {
+	background: #003063;
+	height: 30px
+}
+#MapApp .map-ikon-filter-wrap .StavbyProvoz:hover,
+#MapApp .map-ikon-filter-wrap.ok .StavbyProvoz:hover {
+	background: #30B24D;
+	height: 30px
+}
+#MapApp .map-ikon-filter-wrap.ok .StavbyProvoz {
+	background: #30B24D url("https://apdos.roadmedia.cz/images/icons30/ok.png") no-repeat right top !important;
+	height: 30px
+}
+#MapApp .map-ikon-filter-wrap .StavbyStudie {
+	background: #003063;
+	height: 30px;
+	border-radius: 30px !important;
+}
+#MapApp .map-ikon-filter-wrap .StavbyStudie:hover,
+#MapApp .map-ikon-filter-wrap.ok .StavbyStudie:hover {
+	background: #888;
+	height: 30px
+}
+#MapApp .map-ikon-filter-wrap.ok .StavbyStudie {
+	background: #a0a0a0 url("https://apdos.roadmedia.cz/images/icons30/ok.png") no-repeat right top !important;
+	height: 30px
+}
+#MapApp .opravy .map-ikon-filter-wrap {
+	width: 28.25%
+}
+#MapApp .opravy .map-ikon-filter-wrap .map-ikon {
+	padding-top: 7px
+}
+#MapApp .map-ikon-filter-wrap .Realizace {
+	background: #003063;
+	height: 30px
+}
+#MapApp .map-ikon-filter-wrap .Realizace:hover,
+#MapApp .map-ikon-filter-wrap.ok .Realizace:hover {
+	background: #D72525
+}
+#MapApp .map-ikon-filter-wrap.ok .Realizace {
+	background: #D72525 url("https://apdos.roadmedia.cz/images/icons30/ok.png") no-repeat right top !important
+}
+#MapApp .map-ikon-filter-wrap .Priprava {
+	background: #003063;
+	height: 30px
+}
+#MapApp .map-ikon-filter-wrap .Priprava:hover,
+#MapApp .map-ikon-filter-wrap.ok .Priprava:hover {
+	background: #2981CA
+}
+#MapApp .map-ikon-filter-wrap.ok .Priprava {
+	background: #2981CA url("https://apdos.roadmedia.cz/images/icons30/ok.png") no-repeat right top !important
+}
+#MapApp .map-ikon-filter-wrap .Dokonceno {
+	background: #003063;
+	height: 30px
+}
+#MapApp .map-ikon-filter-wrap .Dokonceno:hover,
+#MapApp .map-ikon-filter-wrap.ok .Dokonceno:hover {
+	background: #30B24D
+}
+#MapApp .map-ikon-filter-wrap.ok .Dokonceno {
+	background: #30B24D url("https://apdos.roadmedia.cz/images/icons30/ok.png") no-repeat right top !important
+}
+#MapApp .map-ikon-filter-wrap .Pod20 .map-ikon {
+	border: 1px solid #009FE3;
+	background: url("https://apdos.roadmedia.cz/icons/dopravni-info.gif") no-repeat center center !important;
+	background-size: 85% !important;
+	height: 30px;
+	color: transparent !important;
+	font-size: 0px !important
+}
+#MapApp .map-ikon-filter-wrap .Pod20 .map-ikon:hover {
+	border: 1px solid #003063
+}
+#MapApp .map-ikon-filter-wrap .Pod20 .map-ikon:hover {
+	background: #009FE3
+}
+#MapApp a.map-ikon-filter-wrap {
+	text-decoration: none
+}
+@media (max-width: 1200px) {
+#MapApp .map-ikon-filter-wrap .Pod20 .map-ikon {
+	background-size: 55% !important
+}
+}
+@media (max-width: 991px) {
+#MapApp .map-ikon-filter-wrap .Pod20 .map-ikon {
+	background-size: 80% !important
+}
+}
+@media (max-width: 500px) {
+#MapApp .map-ikon-filter-wrap .Pod20 .map-ikon {
+	background-size: 55% !important
+}
+}
+#MapApp .map_filter_stavby {
+	font-size: 12px
+}
+#MapApp .map_filter_stavby .map-ikon-filter-wrap {
+	float: left;
+	width: 6%;
+	height: 32px;
+	margin: -1px 0 9px 0;
+	border: 1px solid white;
+	background: center center no-repeat;
+	cursor: pointer
+}
+#MapApp .map_filter_stavby .map_filter_wrapper.StavbyProvoz .map-ikon-filter-wrap {
+	border-left: none;
+	border-right: none
+}
+#MapApp .opravy .map_filter_stavby .map-ikon-filter-wrap {
+	width: 25%;
+	padding-right: 5px;
+	margin: -1px 0 9px 0px
+}
+#MapApp .opravy .map_filter_stavby .map-ikon-filter-wrap:first-child {
+	margin: -1px 0 9px -1px
+}
+#MapApp .opravy .map_filter_stavby .map-ikon-filter-wrap:nth-child(4) {
+	width: 13%
+}
+@media (max-width: 1200px) {
+#MapApp .map_filter_stavby .map-ikon-filter-wrap: last-child {
+	margin: -1px 0 9px -1
+}
+#MapApp .map_filter_stavby .map-ikon-filter-wrap {
+	width: 50%
+}
+#MapApp .map-filter-buttons {
+	width: 100%
+}
+#MapApp .opravy .map_filter_stavby .map-ikon-filter-wrap:nth-child(4) {
+	width: 25%;
+	padding-right: 0
+}
+#MapApp .opravy .filter-button {
+	border-right: 6px solid white
+}
+}
+@media (max-width: 991px) {
+#MapApp .map_filter_stavby .map-ikon-filter-wrap {
+	width: 50%;
+	overflow: hidden
+}
+#MapApp .map_filter_stavby .map-ikon-filter-wrap:last-child {
+	margin: -1px 0 9px 0
+}
+#MapApp .opravy .map_filter_stavby .map-ikon-filter-wrap {
+	height: 34px
+}
+}
+@media (max-width: 768px) {
+#MapApp .map_filter_stavby .map-ikon-filter-wrap {
+	width: 50%;
+	overflow: hidden
+}
+#MapApp .map_filter_stavby .map-ikon-filter-wrap:last-child {
+	margin: -1px 0 9px 0
+}
+}
+#MapApp .map_filter_stavby .map-ikon-filter-wrap {
+	color: white;
+	text-align: center
+}
+#MapApp .map_filter_stavby .map-ikon-filter {
+	background: rgba(255,255,255,0.3);
+	color: white;
+}
+#MapApp .map_filter_stavby .map-ikon-filter:hover {
+	background: #003063;
+	color: white
+}
+#MapApp .map_filter_stavby .map-ikon {
+	padding: 7px 0
+}
+#MapApp .map_filter_stavby .ok .map-ikon:hover {
+	background: url("https://apdos.roadmedia.cz/images/icons30/ok.png") no-repeat right top !important
+}
+@media (max-width: 992px) {
+#MapApp .map-filter-inputs-wrap {
+	width: 100%
+}
+#MapApp .map-filter-buttons {
+	width: 100%
+}
+#MapApp .map_filter_checkboxes .map-ikon-filter-wrap {
+	margin: -1px 0 5px 0
+}
+}
+@media (max-width: 768px) {
+#MapApp .map-filter-inputs-wrap {
+	width: 100%
+}
+#MapApp .map-filter-buttons {
+	width: 100%;
+	float: left
+}
+#MapApp .map_filter_checkboxes .map-ikon-filter-wrap {
+	margin: -1px 0 5px 0
+}
+#MapApp {
+	width: 100%
+}
+#MapApp.mapapp-page-results #Map {
+	height: 400px
+}
+#MapApp.mapapp-page-results #Map {
+	height: 400px
+}
+#MapApp.mapapp-page-detail #Map {
+	height: 400px
+}
+}
+@media (max-width: 500px) {
+#MapApp .map-filter-input {
+	width: 100%;
+	float: left;
+	padding-right: 0
+}
+#MapApp .opravy .map-kraj,
+#MapApp .odpocivky .map-kraj {
+	width: 100%
+}
+#MapApp .opravy .map_filter_stavby .map-ikon-filter-wrap {
+	width: 50%
+}
+#MapApp .opravy .map_filter_stavby .map-ikon-filter-wrap:nth-child(4) {
+	width: 50%;
+	padding-right: 0
+}
+#MapApp .opravy .map_filter_stavby .map-ikon-filter-wrap:nth-child(2) {
+	width: 50%;
+	padding-right: 0
+}
+}
+#MapApp .map_filter_checkboxes .map-ikon-filter-wrap div div.map-ikon {
+	width: 100%;
+	height: 30px;
+	cursor: hand;
+	cursor: pointer
+}
+.parkoviste {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/parkoviste.png")
+}
+.phm {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/phm.png")
+}
+.lpg {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/lpg.png")
+}
+.servis {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/servis.png")
+}
+.mycka {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/mycka.png")
+}
+.restaurace {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/restaurace.png")
+}
+.jidelna {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/jidelna.png")
+}
+.bistro {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/bistro.png")
+}
+.cafe {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/cafe.png")
+}
+.fastfood {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/fastfood.png")
+}
+.grill {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/grill.png")
+}
+.motel {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/motel.png")
+}
+.hotel {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/hotel.png")
+}
+.penzion {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/penzion.png")
+}
+.wc {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/wc.png")
+}
+.wc-in {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/wc-in.png")
+}
+.sprcha {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/sprcha.png")
+}
+.wifi {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/wifi.png")
+}
+.el-karavan {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/el-karavan.png")
+}
+.hriste {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/hriste.png")
+}
+.kupon {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/kupon.png")
+}
+.palubni-jednotka {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/palubni-jednotka.png")
+}
+.bank {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/bank.png")
+}
+.smenarna {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/smenarna.png")
+}
+.lekarna {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/lekarna.png")
+}
+.park-poplatek {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/park-poplatek.png")
+}
+.oploceni {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/oploceni.png")
+}
+.osvetleni {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/osvetleni.png")
+}
+.strezeni {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/strezeni.png")
+}
+.monitor {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/monitor.png")
+}
+.chlazeni {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/chlazeni.png")
+}
+.obsazenost {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/obsazenost.png")
+}
+.agip {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/agip.png")
+}
+.autogrill {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/autogrill.png")
+}
+.benzina {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/benzina.png")
+}
+.burgerking {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/burgerking.png")
+}
+.eurooil {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/eurooil.png")
+}
+.f1gas {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/f1gas.png")
+}
+.kfc {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/kfc.png")
+}
+.koloc {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/koloc.png")
+}
+.mcdonalds {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/mcdonalds.png")
+}
+.mol {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/mol.png")
+}
+.omv {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/omv.png")
+}
+.orlen {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/orlen.png")
+}
+.papoil {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/papoil.png")
+}
+.robin oil {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/robinoil.png")
+}
+.rohlenka {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/rohlenka.png")
+}
+.shell {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/shell.png")
+}
+.subway {
+	background-image: url("https://apdos.roadmedia.cz/images/icons30/subway.png")
+}
+#MapApp .map-ikon {
+	background: rgba(255,255,255,0.3)
+}
+#MapApp .map-ikon:hover {
+	background: none
+}
+#MapApp .ok .map-ikon {
+	background: url("https://apdos.roadmedia.cz/images/icons30/ok.png") no-repeat top right
+}
+#MapApp .ok .map-ikon:hover {
+	background: url("https://apdos.roadmedia.cz/images/icons30/ok.png") no-repeat top right
+}
+#MapApp .map_filter_checkboxes .ok {
+	border: 1px solid white !important
+}
+#MapApp * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+#MapApp *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+#MapApp .map-buttons-more {
+	padding-top: 20px
+}
+#MapApp .map-btn {
+	display: inline-block;
+	margin-bottom: 10px;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	border-radius: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	color: #fff;
+	background-color: #003063;
+	border-color: none
+}
+#MapApp .data-back {
+	float: left
+}
+#MapApp .data-forward {
+	float: right
+}
+#MapApp .map-btn:hover,
+#MapApp .map-btn:focus,
+#MapApp .map-btn.focus,
+#MapApp .map-btn:active,
+#MapApp .map-btn.active,
+#MapApp .open>.dropdown-toggle.map-btn,
+#MapApp a.back-to-list:hover {
+	color: #fff;
+	background-color: #001730;
+	border-color: none
+}
+#MapApp a.back-to-list {
+	display: inline-block;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	white-space: nowrap;
+	padding: 4px 10px 8px 10px;
+	margin: -5px 10px 0 0;
+	font-size: 18px;
+	line-height: 1;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	color: #fff;
+	background-color: #003063;
+	text-decoration: none
+}
+#MapApp .parametry-odpocivky {
+	width: 100%
+}
+#MapApp .info-boxes {
+	overflow: hidden
+}
+#MapApp .info-box-col {
+	float: left;
+	width: 40px;
+	margin: 0 3px;
+	text-align: center
+}
+#MapApp .info-box-col img {
+	width: 40px;
+	cursor: help
+}
+#MapApp .info-box-col p {
+	font-size: 17px;
+	font-weight: bold;
+	color: #009fe3;
+	margin: 5px
+}
+#MapApp .pic-thumbnail {
+	float: left;
+	padding: 0 7px 10px 3px;
+	margin-bottom: 10px;
+	width: 25%;
+	height: 180px;
+	overflow: hidden
+}
+@media (max-width: 1200px) {
+#MapApp .pic-thumbnail {
+	float: left;
+	padding: 0 7px 10px 3px;
+	margin-bottom: 10px;
+	width: 25%;
+	height: 145px;
+	overflow: hidden
+}
+}
+@media (max-width: 990px) {
+#MapApp .pic-thumbnail {
+	float: left;
+	padding: 0 7px 10px 3px;
+	margin-bottom: 10px;
+	width: 25%;
+	height: 110px;
+	overflow: hidden
+}
+}
+@media (max-width: 768px) {
+#MapApp .pic-thumbnail {
+	width: 33%
+}
+}
+@media (max-width: 500px) {
+#MapApp .pic-thumbnail {
+	width: 50%
+}
+}
+@media (max-width: 200px) {
+#MapApp .pic-thumbnail {
+	width: 100%
+}
+}
+#MapApp .pic-thumbnail img {
+	width: 100%;
+	height: auto
+}
+#MapApp .rsd-icon {
+	font-size: 14px !important;
+	color: #004B8F;
+	text-align: center !important;
+	width: inherit !important;
+	min-width: 240px !important;
+	height: 70px !important
+}
+#MapApp .rsd-icon:hover {
+	z-index: 9999 !important;
+	cursor: pointer
+}
+#MapApp .rsd-icon div {
+	background: #fff;
+	padding: 5px 7px 10px 7px;
+	position: relative;
+	border: 1px solid #009fe3
+}
+#MapApp .n {
+	margin-top: 10px !important;
+	margin-left: -120px !important
+}
+#MapApp .n div:after,
+#MapApp .n div:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none
+}
+#MapApp .n div:after {
+	border-color: rgba(255,255,255,0);
+	border-bottom-color: #ffffff;
+	border-width: 10px;
+	margin-left: -10px
+}
+#MapApp .n div:before {
+	border-color: rgba(0,159,227,0);
+	border-bottom-color: #009fe3;
+	border-width: 11px;
+	margin-left: -11px
+}
+#MapApp .s {
+	margin-top: -85px !important;
+	margin-left: -120px !important
+}
+#MapApp .s div:after,
+#MapApp .s div:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none
+}
+#MapApp .s div:after {
+	border-color: rgba(255,255,255,0);
+	border-top-color: #ffffff;
+	border-width: 10px;
+	margin-left: -10px
+}
+#MapApp .s div:before {
+	border-color: rgba(0,159,227,0);
+	border-top-color: #009fe3;
+	border-width: 11px;
+	margin-left: -11px
+}
+#MapApp .w {
+	margin-top: -35px !important;
+	margin-left: 0px !important
+}
+#MapApp .w div:after,
+#MapApp .w div:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none
+}
+#MapApp .w div:after {
+	border-color: rgba(255,255,255,0);
+	border-right-color: #ffffff;
+	border-width: 10px;
+	margin-top: -10px
+}
+#MapApp .w div:before {
+	border-color: rgba(0,159,227,0);
+	border-right-color: #009fe3;
+	border-width: 11px;
+	margin-top: -11px
+}
+#MapApp .e {
+	margin-top: -35px !important;
+	margin-left: -250px !important
+}
+#MapApp .e div:after,
+#MapApp .e div:before {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none
+}
+#MapApp .e div:after {
+	border-color: rgba(255,255,255,0);
+	border-left-color: #ffffff;
+	border-width: 10px;
+	margin-top: -10px
+}
+#MapApp .e div:before {
+	border-color: rgba(0,159,227,0);
+	border-left-color: #009fe3;
+	border-width: 11px;
+	margin-top: -11px
+}
+.bod-vyb, .bod-vyb:after, .bod-vyb:before {
+	padding: 0 !important;
+	margin: 0 !important;
+	border: 0 !important
+}
+.bod-vyb img {
+	padding: 5px 2px 0 2px;
+	width: 30px;
+	height: 30px
+}
+#MapApp .DetailStavby .mapa-jpg img {
+	max-width: 100%
+}
+#MapApp .DetailStavby .content p {
+	margin: 0 15px 15px 0
+}
+#MapApp .DetailStavby h2 {
+	margin: 10px 0
+}
+@media screen and (min-width: 992px) {
+#MapApp .DetailStavby .map-table tr th: nth-child(1) {
+	width: 50px
+}
+#MapApp .DetailStavby .map-table tr th:nth-child(2) {
+	width: 250px
+}
+#MapApp .DetailStavby .map-table tr th:nth-child(3) {
+	width: 100px
+}
+#MapApp .DetailStavby .map-table tr th:nth-child(4) {
+	width: 200px
+}
+}
+#MapApp .video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 0px;
+	height: 0;
+	overflow: hidden;
+	margin-bottom: 10px
+}
+#MapApp .video-container iframe,
+#MapApp .video-container object,
+#MapApp .video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%
+}
+img.leaflet-marker-icon.leaflet-zoom-animated.leaflet-interactive:hover {
+	cursor: pointer
+}
+#MapApp .leaflet-popup-content-wrapper {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	border: 1px solid #009fe3;
+	border-bottom-width: 0;
+	background: #fff url("https://apdos.roadmedia.cz/images/icons30/border-blue-bottom.jpg") bottom center no-repeat
+}
+#MapApp .leaflet-popup-content {
+	background: transparent
+}
+#MapApp .leaflet-popup-tip {
+	border: 1px solid #009fe3
+}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+	box-shadow: none
+}
+#MapApp .leaflet-popup-content p {
+	margin-bottom: 10px !important
+}
+#MapApp .leaflet-popup-content ul {
+	padding-left: 10px !important
+}
+@font-face {
+	font-family: 'fontello';
+	src: url("https://apdos.roadmedia.cz/fonts/fontello.eot?41879911");
+	src: url("https://apdos.roadmedia.cz/fonts/fontello.eot?41879911#iefix") format("embedded-opentype"), url("https://apdos.roadmedia.cz/fonts/fontello.woff?41879911") format("woff"), url("https://apdos.roadmedia.cz/fonts/fontello.ttf?41879911") format("truetype"), url("https://apdos.roadmedia.cz/fonts/fontello.svg?41879911#fontello") format("svg");
+	font-weight: normal;
+	font-style: normal
+}
+[class^="icon-mapapp-"]:before, [class*=" icon-mapapp-"]:before {
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1em;
+	margin-left: .2em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+.icon-mapapp-road:before {
+	content: '\e800'
+}
+.icon-mapapp-link:before {
+	content: '\e801'
+}
+.icon-mapapp-home:before {
+	content: '\e802'
+}
+.icon-mapapp-ok:before {
+	content: '\e803'
+}
+.icon-mapapp-ok-circled:before {
+	content: '\e804'
+}
+.icon-mapapp-ok-circled2:before {
+	content: '\e805'
+}
+.icon-mapapp-cancel-circled:before {
+	content: '\e806'
+}
+.icon-mapapp-cancel-circled2:before {
+	content: '\e807'
+}
+.icon-mapapp-search:before {
+	content: '\e808'
+}
+.icon-mapapp-location:before {
+	content: '\e809'
+}
+.icon-mapapp-down-open:before {
+	content: '\e80a'
+}
+.icon-mapapp-left-open:before {
+	content: '\e80b'
+}
+.icon-mapapp-right-open:before {
+	content: '\e80c'
+}
+.icon-mapapp-up-open:before {
+	content: '\e80d'
+}
+.icon-mapapp-download:before {
+	content: '\e80e'
+}
+.icon-mapapp-link-ext:before {
+	content: '\f08e'
+}
+.icon-mapapp-filter:before {
+	content: '\f0b0'
+}
+.icon-mapapp-sitemap:before {
+	content: '\f0e8'
+}
+.icon-mapapp-angle-double-left:before {
+	content: '\f100'
+}
+.icon-mapapp-angle-double-right:before {
+	content: '\f101'
+}
+.icon-mapapp-angle-double-up:before {
+	content: '\f102'
+}
+.icon-mapapp-angle-double-down:before {
+	content: '\f103'
+}
+.icon-mapapp-sort-name-up:before {
+	content: '\f15e'
+}
+.icon-mapapp-sort-name-down:before {
+	content: '\f15d'
+}
+#MapApp .sorted:hover .icon-mapapp-sort-name-up:before {
+	content: '\f15d'
+}
+#MapApp .sorted:hover .icon-mapapp-sort-name-down:before {
+	content: '\f15e'
+}
+#MapApp .map-table tr th:last-child .icon-mapapp-sort-name-up:before {
+	content: '\f163'
+}
+#MapApp .map-table tr th:last-child .icon-mapapp-sort-name-down:before {
+	content: '\f162'
+}
+#MapApp .map-table tr th.sorted:last-child:hover .icon-mapapp-sort-name-up:before {
+	content: '\f162'
+}
+#MapApp .map-table tr th.sorted:last-child:hover .icon-mapapp-sort-name-down:before {
+	content: '\f163'
+}
+#MapApp .odpocivky .map-table tr th:nth-child(5) .icon-mapapp-sort-name-up:before {
+	content: '\f163'
+}
+#MapApp .odpocivky .map-table tr th:nth-child(5) .icon-mapapp-sort-name-down:before {
+	content: '\f162'
+}
+#MapApp .odpocivky .map-table tr th.sorted:nth-child(5):hover .icon-mapapp-sort-name-up:before {
+	content: '\f162'
+}
+#MapApp .odpocivky .map-table tr th.sorted:nth-child(5):hover .icon-mapapp-sort-name-down:before {
+	content: '\f163'
+}
+.icon-mapapp-sort-number-up:before {
+	content: '\f162'
+}
+.icon-mapapp-sort-number-down:before {
+	content: '\f163'
+}
+.icon-mapapp-cab:before {
+	content: '\f1b9'
+}
+.icon-mapapp-file-pdf:before {
+	content: '\f1c1'
+}
+.icon-mapapp-map-signs:before {
+	content: '\f277'
+}
+.icon-mapapp-map-o:before {
+	content: '\f278'
+}
+.icon-mapapp-map:before {
+	content: '\f279'
+}
+#MapApp .icon-mapapp-file-pdf {
+	margin-right: 5px
+}
+#MapApp .icon-mapapp-sort-name-down {
+	cursor: pointer;
+	color: #888
+}
+#MapApp .sortable {
+	cursor: pointer
+}
+#MapApp .sortable:hover .icon-mapapp-sort-name-down,
+#MapApp .sortable:hover .icon-mapapp-sort-name-up,
+#MapApp .sortable:hover .icon-mapapp-sort-number-down,
+#MapApp .sortable:hover .icon-mapapp-sort-number-up {
+	color: #004A8F
+}
+#MapApp .sorted .icon-mapapp-sort-name-down,
+#MapApp .sorted .icon-mapapp-sort-name-up,
+#MapApp .sorted .icon-mapapp-sort-number-down,
+#MapApp .sorted .icon-mapapp-sort-number-up {
+	color: #004A8F
+}
+#MapApp tr .wrapper {
+	text-transform: lowercase
+}
+#MapApp h2 small {
+	float: right;
+	margin: 10px 0;
+	font-size: 17px
+}
+#MapApp tr .wrapper {
+	padding: 4px 5px 3px 26px;
+	color: white;
+	min-width: 90px;
+	font-size: 11px;
+	text-align: left;
+	font-weight: bold
+}
+#MapApp tr[data-stav='V realizaci'] .wrapper,
+#MapApp tr[data-stav='v realizaci'] .wrapper {
+	background: #D72525 url("https://apdos.roadmedia.cz/icons/iko-bagr.png") 5px 5px no-repeat;
+	background-size: 20px 10px
+}
+#MapApp tr[data-stav='V přípravě'] .wrapper,
+#MapApp tr[data-stav='v přípravě'] .wrapper {
+	background: #2981CA url("https://apdos.roadmedia.cz/icons/iko-bagr.png") 5px 5px no-repeat;
+	background-size: 20px 10px
+}
+#MapApp tr[data-stav='V provozu'] .wrapper,
+#MapApp tr[data-stav='Dokončeno'] .wrapper,
+#MapApp tr[data-stav='dokončeno'] .wrapper {
+	background: #30B24D url("https://apdos.roadmedia.cz/images/icons30/oka.png") 4px 4px no-repeat
+}
+#MapApp tr[data-stav='Studie'] .wrapper {
+	background: #888 url("https://apdos.roadmedia.cz/icons/iko-bagr.png") 5px 5px no-repeat;
+	background-size: 20px 10px
+}
+#MapApp .opravy tr[data-stav='V realizaci'] .wrapper,
+#MapApp .opravy tr[data-stav='v realizaci'] .wrapper {
+	background: #D72525 url("https://apdos.roadmedia.cz/icons/iko-opravy.png") 5px 5px no-repeat;
+	background-size: 26px 12px
+}
+#MapApp .opravy tr[data-stav='V přípravě'] .wrapper,
+#MapApp .opravy tr[data-stav='v přípravě'] .wrapper {
+	background: #2981CA url("https://apdos.roadmedia.cz/icons/iko-opravy.png") 5px 5px no-repeat;
+	background-size: 26px 12px
+}
+#MapApp .odpocivky tr[data-stav='V provozu'] .wrapper {
+	background: #2981CA url("https://apdos.roadmedia.cz/icons/iko-odpocivky.png") 5px 5px no-repeat;
+	background-size: 20px 10px
+}
+#MapApp .odpocivky tr[data-stav='Uzavřené'] .wrapper {
+	background: #D72525 url("https://apdos.roadmedia.cz/icons/iko-odpocivky.png") 5px 5px no-repeat;
+	background-size: 20px 10px
+}
+#MapApp .odpocivky tr[data-stav='Plánované'] .wrapper {
+	background: #888 url("https://apdos.roadmedia.cz/icons/iko-odpocivky.png") 5px 5px no-repeat;
+	background-size: 20px 10px
+}
