@@ -7722,7 +7722,7 @@ Liferay.Loader.define('career-ui-job-advertisement-public-overview@1.0.0/index',
     };
 
     var CzechRepublicSVGMap = {
-      "label": "Map of Czech Republic",
+      "label": "Map of Czech Republica",
       "viewBox": "0 0 215 120",
       "locations": [{
         "id": "moravskoslezsky",
