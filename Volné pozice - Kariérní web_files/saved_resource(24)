@@ -1,0 +1,1317 @@
+Liferay.Loader.define('@career-ui-job-advertisement-public-overview$emotion/utils@0.11.3/dist/utils.cjs', ['module', 'exports', 'require', './utils.browser.cjs'], function (module, exports, require) {
+  var define = undefined;
+  var global = window;
+  {
+    /* redirected by alias field(s) in  */
+    module.exports = require('./utils.browser.cjs');
+  }
+});
+
+'use strict';
+
+Liferay.Loader.define('@career-ui-job-advertisement-public-overview$emotion/hash@0.8.0/dist/hash.browser.cjs', ['module', 'exports', 'require'], function (module, exports, require) {
+  var define = undefined;
+  var global = window;
+  {
+    Object.defineProperty(exports, '__esModule', { value: true });
+
+    /* eslint-disable */
+    // Inspired by https://github.com/garycourt/murmurhash-js
+    // Ported from https://github.com/aappleby/smhasher/blob/61a0530f28277f2e850bfc39600ce61d02b518de/src/MurmurHash2.cpp#L37-L86
+    function murmur2(str) {
+      // 'm' and 'r' are mixing constants generated offline.
+      // They're not really 'magic', they just happen to work well.
+      // const m = 0x5bd1e995;
+      // const r = 24;
+      // Initialize the hash
+      var h = 0; // Mix 4 bytes at a time into the hash
+
+      var k,
+          i = 0,
+          len = str.length;
+
+      for (; len >= 4; ++i, len -= 4) {
+        k = str.charCodeAt(i) & 0xff | (str.charCodeAt(++i) & 0xff) << 8 | (str.charCodeAt(++i) & 0xff) << 16 | (str.charCodeAt(++i) & 0xff) << 24;
+        k =
+        /* Math.imul(k, m): */
+        (k & 0xffff) * 0x5bd1e995 + ((k >>> 16) * 0xe995 << 16);
+        k ^=
+        /* k >>> r: */
+        k >>> 24;
+        h =
+        /* Math.imul(k, m): */
+        (k & 0xffff) * 0x5bd1e995 + ((k >>> 16) * 0xe995 << 16) ^
+        /* Math.imul(h, m): */
+        (h & 0xffff) * 0x5bd1e995 + ((h >>> 16) * 0xe995 << 16);
+      } // Handle the last few bytes of the input array
+
+
+      switch (len) {
+        case 3:
+          h ^= (str.charCodeAt(i + 2) & 0xff) << 16;
+
+        case 2:
+          h ^= (str.charCodeAt(i + 1) & 0xff) << 8;
+
+        case 1:
+          h ^= str.charCodeAt(i) & 0xff;
+          h =
+          /* Math.imul(h, m): */
+          (h & 0xffff) * 0x5bd1e995 + ((h >>> 16) * 0xe995 << 16);
+      } // Do a few final mixes of the hash to ensure the last few
+      // bytes are well-incorporated.
+
+
+      h ^= h >>> 13;
+      h =
+      /* Math.imul(h, m): */
+      (h & 0xffff) * 0x5bd1e995 + ((h >>> 16) * 0xe995 << 16);
+      return ((h ^ h >>> 15) >>> 0).toString(36);
+    }
+
+    exports.default = murmur2;
+  }
+});
+
+Liferay.Loader.define('@career-ui-job-advertisement-public-overview$emotion/hash@0.8.0/dist/hash.cjs', ['module', 'exports', 'require', './hash.browser.cjs'], function (module, exports, require) {
+  var define = undefined;
+  var global = window;
+  {
+    /* redirected by alias field(s) in  */
+    module.exports = require('./hash.browser.cjs');
+  }
+});
+
+'use strict';
+
+Liferay.Loader.define('@career-ui-job-advertisement-public-overview$emotion/unitless@0.7.5/dist/unitless.browser.cjs', ['module', 'exports', 'require'], function (module, exports, require) {
+  var define = undefined;
+  var global = window;
+  {
+    Object.defineProperty(exports, '__esModule', { value: true });
+
+    var unitlessKeys = {
+      animationIterationCount: 1,
+      borderImageOutset: 1,
+      borderImageSlice: 1,
+      borderImageWidth: 1,
+      boxFlex: 1,
+      boxFlexGroup: 1,
+      boxOrdinalGroup: 1,
+      columnCount: 1,
+      columns: 1,
+      flex: 1,
+      flexGrow: 1,
+      flexPositive: 1,
+      flexShrink: 1,
+      flexNegative: 1,
+      flexOrder: 1,
+      gridRow: 1,
+      gridRowEnd: 1,
+      gridRowSpan: 1,
+      gridRowStart: 1,
+      gridColumn: 1,
+      gridColumnEnd: 1,
+      gridColumnSpan: 1,
+      gridColumnStart: 1,
+      msGridRow: 1,
+      msGridRowSpan: 1,
+      msGridColumn: 1,
+      msGridColumnSpan: 1,
+      fontWeight: 1,
+      lineHeight: 1,
+      opacity: 1,
+      order: 1,
+      orphans: 1,
+      tabSize: 1,
+      widows: 1,
+      zIndex: 1,
+      zoom: 1,
+      WebkitLineClamp: 1,
+      // SVG-related properties
+      fillOpacity: 1,
+      floodOpacity: 1,
+      stopOpacity: 1,
+      strokeDasharray: 1,
+      strokeDashoffset: 1,
+      strokeMiterlimit: 1,
+      strokeOpacity: 1,
+      strokeWidth: 1
+    };
+
+    exports.default = unitlessKeys;
+  }
+});
+
+Liferay.Loader.define('@career-ui-job-advertisement-public-overview$emotion/unitless@0.7.5/dist/unitless.cjs', ['module', 'exports', 'require', './unitless.browser.cjs'], function (module, exports, require) {
+  var define = undefined;
+  var global = window;
+  {
+    /* redirected by alias field(s) in  */
+    module.exports = require('./unitless.browser.cjs');
+  }
+});
+
+'use strict';
+
+Liferay.Loader.define('@career-ui-job-advertisement-public-overview$emotion/memoize@0.7.4/dist/memoize.browser.cjs', ['module', 'exports', 'require'], function (module, exports, require) {
+  var define = undefined;
+  var global = window;
+  {
+    Object.defineProperty(exports, '__esModule', { value: true });
+
+    function memoize(fn) {
+      var cache = {};
+      return function (arg) {
+        if (cache[arg] === undefined) cache[arg] = fn(arg);
+        return cache[arg];
+      };
+    }
+
+    exports.default = memoize;
+  }
+});
+
+Liferay.Loader.define('@career-ui-job-advertisement-public-overview$emotion/memoize@0.7.4/dist/memoize.cjs', ['module', 'exports', 'require', './memoize.browser.cjs'], function (module, exports, require) {
+  var define = undefined;
+  var global = window;
+  {
+    /* redirected by alias field(s) in  */
+    module.exports = require('./memoize.browser.cjs');
+  }
+});
+
+'use strict';
+
+Liferay.Loader.define('@career-ui-job-advertisement-public-overview$emotion/serialize@0.11.16/dist/serialize.browser.cjs', ['module', 'exports', 'require', '@career-ui-job-advertisement-public-overview$emotion/hash', '@career-ui-job-advertisement-public-overview$emotion/unitless', '@career-ui-job-advertisement-public-overview$emotion/memoize'], function (module, exports, require) {
+  var define = undefined;
+  var global = window;
+  {
+    Object.defineProperty(exports, '__esModule', { value: true });
+
+    function _interopDefault(ex) {
+      return ex && typeof ex === 'object' && 'default' in ex ? ex['default'] : ex;
+    }
+
+    var hashString = _interopDefault(require('@career-ui-job-advertisement-public-overview$emotion/hash'));
+    var unitless = _interopDefault(require('@career-ui-job-advertisement-public-overview$emotion/unitless'));
+    var memoize = _interopDefault(require('@career-ui-job-advertisement-public-overview$emotion/memoize'));
+
+    var ILLEGAL_ESCAPE_SEQUENCE_ERROR = "You have illegal escape sequence in your template literal, most likely inside content's property value.\nBecause you write your CSS inside a JavaScript string you actually have to do double escaping, so for example \"content: '\\00d7';\" should become \"content: '\\\\00d7';\".\nYou can read more about this here:\nhttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#ES2018_revision_of_illegal_escape_sequences";
+    var UNDEFINED_AS_OBJECT_KEY_ERROR = "You have passed in falsy value as style object's key (can happen when in example you pass unexported component as computed key).";
+    var hyphenateRegex = /[A-Z]|^ms/g;
+    var animationRegex = /_EMO_([^_]+?)_([^]*?)_EMO_/g;
+
+    var isCustomProperty = function isCustomProperty(property) {
+      return property.charCodeAt(1) === 45;
+    };
+
+    var isProcessableValue = function isProcessableValue(value) {
+      return value != null && typeof value !== 'boolean';
+    };
+
+    var processStyleName = memoize(function (styleName) {
+      return isCustomProperty(styleName) ? styleName : styleName.replace(hyphenateRegex, '-$&').toLowerCase();
+    });
+
+    var processStyleValue = function processStyleValue(key, value) {
+      switch (key) {
+        case 'animation':
+        case 'animationName':
+          {
+            if (typeof value === 'string') {
+              return value.replace(animationRegex, function (match, p1, p2) {
+                cursor = {
+                  name: p1,
+                  styles: p2,
+                  next: cursor
+                };
+                return p1;
+              });
+            }
+          }
+      }
+
+      if (unitless[key] !== 1 && !isCustomProperty(key) && typeof value === 'number' && value !== 0) {
+        return value + 'px';
+      }
+
+      return value;
+    };
+
+    var contentValuePattern = /(attr|calc|counters?|url)\(/;
+    var contentValues = ['normal', 'none', 'counter', 'open-quote', 'close-quote', 'no-open-quote', 'no-close-quote', 'initial', 'inherit', 'unset'];
+    var oldProcessStyleValue = processStyleValue;
+    var msPattern = /^-ms-/;
+    var hyphenPattern = /-(.)/g;
+    var hyphenatedCache = {};
+
+    processStyleValue = function processStyleValue(key, value) {
+      if (key === 'content') {
+        if (typeof value !== 'string' || contentValues.indexOf(value) === -1 && !contentValuePattern.test(value) && (value.charAt(0) !== value.charAt(value.length - 1) || value.charAt(0) !== '"' && value.charAt(0) !== "'")) {
+          console.error("You seem to be using a value for 'content' without quotes, try replacing it with `content: '\"" + value + "\"'`");
+        }
+      }
+
+      var processed = oldProcessStyleValue(key, value);
+
+      if (processed !== '' && !isCustomProperty(key) && key.indexOf('-') !== -1 && hyphenatedCache[key] === undefined) {
+        hyphenatedCache[key] = true;
+        console.error("Using kebab-case for css properties in objects is not supported. Did you mean " + key.replace(msPattern, 'ms-').replace(hyphenPattern, function (str, _char) {
+          return _char.toUpperCase();
+        }) + "?");
+      }
+
+      return processed;
+    };
+
+
+    var shouldWarnAboutInterpolatingClassNameFromCss = true;
+
+    function handleInterpolation(mergedProps, registered, interpolation, couldBeSelectorInterpolation) {
+      if (interpolation == null) {
+        return '';
+      }
+
+      if (interpolation.__emotion_styles !== undefined) {
+        if (true && interpolation.toString() === 'NO_COMPONENT_SELECTOR') {
+          throw new Error('Component selectors can only be used in conjunction with babel-plugin-emotion.');
+        }
+
+        return interpolation;
+      }
+
+      switch (typeof interpolation) {
+        case 'boolean':
+          {
+            return '';
+          }
+
+        case 'object':
+          {
+            if (interpolation.anim === 1) {
+              cursor = {
+                name: interpolation.name,
+                styles: interpolation.styles,
+                next: cursor
+              };
+              return interpolation.name;
+            }
+
+            if (interpolation.styles !== undefined) {
+              var next = interpolation.next;
+
+              if (next !== undefined) {
+                // not the most efficient thing ever but this is a pretty rare case
+                // and there will be very few iterations of this generally
+                while (next !== undefined) {
+                  cursor = {
+                    name: next.name,
+                    styles: next.styles,
+                    next: cursor
+                  };
+                  next = next.next;
+                }
+              }
+
+              var styles = interpolation.styles + ";";
+
+              if (true && interpolation.map !== undefined) {
+                styles += interpolation.map;
+              }
+
+              return styles;
+            }
+
+            return createStringFromObject(mergedProps, registered, interpolation);
+          }
+
+        case 'function':
+          {
+            if (mergedProps !== undefined) {
+              var previousCursor = cursor;
+              var result = interpolation(mergedProps);
+              cursor = previousCursor;
+              return handleInterpolation(mergedProps, registered, result, couldBeSelectorInterpolation);
+            } else {
+              console.error('Functions that are interpolated in css calls will be stringified.\n' + 'If you want to have a css call based on props, create a function that returns a css call like this\n' + 'let dynamicStyle = (props) => css`color: ${props.color}`\n' + 'It can be called directly with props or interpolated in a styled call like this\n' + "let SomeComponent = styled('div')`${dynamicStyle}`");
+            }
+
+            break;
+          }
+
+        case 'string':
+          var matched = [];
+          var replaced = interpolation.replace(animationRegex, function (match, p1, p2) {
+            var fakeVarName = "animation" + matched.length;
+            matched.push("const " + fakeVarName + " = keyframes`" + p2.replace(/^@keyframes animation-\w+/, '') + "`");
+            return "${" + fakeVarName + "}";
+          });
+
+          if (matched.length) {
+            console.error('`keyframes` output got interpolated into plain string, please wrap it with `css`.\n\n' + 'Instead of doing this:\n\n' + [].concat(matched, ["`" + replaced + "`"]).join('\n') + '\n\nYou should wrap it with `css` like this:\n\n' + ("css`" + replaced + "`"));
+          }
+
+
+          break;
+      } // finalize string values (regular strings and functions interpolated into css calls)
+
+
+      if (registered == null) {
+        return interpolation;
+      }
+
+      var cached = registered[interpolation];
+
+      if (true && couldBeSelectorInterpolation && shouldWarnAboutInterpolatingClassNameFromCss && cached !== undefined) {
+        console.error('Interpolating a className from css`` is not recommended and will cause problems with composition.\n' + 'Interpolating a className from css`` will be completely unsupported in a future major version of Emotion');
+        shouldWarnAboutInterpolatingClassNameFromCss = false;
+      }
+
+      return cached !== undefined && !couldBeSelectorInterpolation ? cached : interpolation;
+    }
+
+    function createStringFromObject(mergedProps, registered, obj) {
+      var string = '';
+
+      if (Array.isArray(obj)) {
+        for (var i = 0; i < obj.length; i++) {
+          string += handleInterpolation(mergedProps, registered, obj[i], false);
+        }
+      } else {
+        for (var _key in obj) {
+          var value = obj[_key];
+
+          if (typeof value !== 'object') {
+            if (registered != null && registered[value] !== undefined) {
+              string += _key + "{" + registered[value] + "}";
+            } else if (isProcessableValue(value)) {
+              string += processStyleName(_key) + ":" + processStyleValue(_key, value) + ";";
+            }
+          } else {
+            if (_key === 'NO_COMPONENT_SELECTOR' && true) {
+              throw new Error('Component selectors can only be used in conjunction with babel-plugin-emotion.');
+            }
+
+            if (Array.isArray(value) && typeof value[0] === 'string' && (registered == null || registered[value[0]] === undefined)) {
+              for (var _i = 0; _i < value.length; _i++) {
+                if (isProcessableValue(value[_i])) {
+                  string += processStyleName(_key) + ":" + processStyleValue(_key, value[_i]) + ";";
+                }
+              }
+            } else {
+              var interpolated = handleInterpolation(mergedProps, registered, value, false);
+
+              switch (_key) {
+                case 'animation':
+                case 'animationName':
+                  {
+                    string += processStyleName(_key) + ":" + interpolated + ";";
+                    break;
+                  }
+
+                default:
+                  {
+                    if (true && _key === 'undefined') {
+                      console.error(UNDEFINED_AS_OBJECT_KEY_ERROR);
+                    }
+
+                    string += _key + "{" + interpolated + "}";
+                  }
+              }
+            }
+          }
+        }
+      }
+
+      return string;
+    }
+
+    var labelPattern = /label:\s*([^\s;\n{]+)\s*;/g;
+    var sourceMapPattern = /\/\*#\ssourceMappingURL=data:application\/json;\S+\s+\*\//;
+
+    // this is the cursor for keyframes
+    // keyframes are stored on the SerializedStyles object as a linked list
+
+
+    var cursor;
+    var serializeStyles = function serializeStyles(args, registered, mergedProps) {
+      if (args.length === 1 && typeof args[0] === 'object' && args[0] !== null && args[0].styles !== undefined) {
+        return args[0];
+      }
+
+      var stringMode = true;
+      var styles = '';
+      cursor = undefined;
+      var strings = args[0];
+
+      if (strings == null || strings.raw === undefined) {
+        stringMode = false;
+        styles += handleInterpolation(mergedProps, registered, strings, false);
+      } else {
+        if (true && strings[0] === undefined) {
+          console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR);
+        }
+
+        styles += strings[0];
+      } // we start at 1 since we've already handled the first arg
+
+
+      for (var i = 1; i < args.length; i++) {
+        styles += handleInterpolation(mergedProps, registered, args[i], styles.charCodeAt(styles.length - 1) === 46);
+
+        if (stringMode) {
+          if (true && strings[i] === undefined) {
+            console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR);
+          }
+
+          styles += strings[i];
+        }
+      }
+
+      var sourceMap;
+
+      styles = styles.replace(sourceMapPattern, function (match) {
+        sourceMap = match;
+        return '';
+      }); // using a global regex with .exec is stateful so lastIndex has to be reset each time
+
+
+      labelPattern.lastIndex = 0;
+      var identifierName = '';
+      var match; // https://esbench.com/bench/5b809c2cf2949800a0f61fb5
+
+      while ((match = labelPattern.exec(styles)) !== null) {
+        identifierName += '-' + // $FlowFixMe we know it's not null
+        match[1];
+      }
+
+      var name = hashString(styles) + identifierName;
+
+      // $FlowFixMe SerializedStyles type doesn't have toString property (and we don't want to add it)
+      return {
+        name: name,
+        styles: styles,
+        map: sourceMap,
+        next: cursor,
+        toString: function toString() {
+          return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop).";
+        }
+      };
+    };
+
+    exports.serializeStyles = serializeStyles;
+  }
+});
+
+Liferay.Loader.define('@career-ui-job-advertisement-public-overview$emotion/serialize@0.11.16/dist/serialize.cjs', ['module', 'exports', 'require', './serialize.browser.cjs'], function (module, exports, require) {
+  var define = undefined;
+  var global = window;
+  {
+    /* redirected by alias field(s) in  */
+    module.exports = require('./serialize.browser.cjs');
+  }
+});
+
+'use strict';
+
+Liferay.Loader.define('@career-ui-job-advertisement-public-overview$emotion/core@10.3.1/dist/emotion-element-3a21e59a.browser.cjs', ['module', 'exports', 'require', '@career-ui-job-advertisement-public-overview$babel/runtime/helpers/inheritsLoose', 'career-ui-job-advertisement-public-overview$react', '@career-ui-job-advertisement-public-overview$emotion/cache', '@career-ui-job-advertisement-public-overview$emotion/utils', '@career-ui-job-advertisement-public-overview$emotion/serialize'], function (module, exports, require) {
+  var define = undefined;
+  var global = window;
+  {
+    require('@career-ui-job-advertisement-public-overview$babel/runtime/helpers/inheritsLoose');
+    var React = require('career-ui-job-advertisement-public-overview$react');
+    var createCache = require('@career-ui-job-advertisement-public-overview$emotion/cache');
+    var utils = require('@career-ui-job-advertisement-public-overview$emotion/utils');
+    var serialize = require('@career-ui-job-advertisement-public-overview$emotion/serialize');
+
+    function _interopDefault(e) {
+      return e && e.__esModule ? e : { 'default': e };
+    }
+
+    var createCache__default = /*#__PURE__*/_interopDefault(createCache);
+
+    var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+    var EmotionCacheContext = /*#__PURE__*/React.createContext( // we're doing this to avoid preconstruct's dead code elimination in this one case
+    // because this module is primarily intended for the browser and node
+    // but it's also required in react native and similar environments sometimes
+    // and we could have a special build just for that
+    // but this is much easier and the native packages
+    // might use a different theme context in the future anyway
+    typeof HTMLElement !== 'undefined' ? createCache__default['default']() : null);
+    var ThemeContext = /*#__PURE__*/React.createContext({});
+    var CacheProvider = EmotionCacheContext.Provider;
+
+    var withEmotionCache = function withEmotionCache(func) {
+      // $FlowFixMe
+
+
+      return (/*#__PURE__*/React.forwardRef(function render(props, ref) {
+          return (/*#__PURE__*/React.createElement(EmotionCacheContext.Consumer, null, function (cache) {
+              return func(props, cache, ref);
+            })
+          );
+        })
+      );
+    };
+
+    // thus we only need to replace what is a valid character for JS, but not for CSS
+
+    var sanitizeIdentifier = function sanitizeIdentifier(identifier) {
+      return identifier.replace(/\$/g, '-');
+    };
+
+    var typePropName = '__EMOTION_TYPE_PLEASE_DO_NOT_USE__';
+    var labelPropName = '__EMOTION_LABEL_PLEASE_DO_NOT_USE__';
+    var createEmotionProps = function createEmotionProps(type, props) {
+      if (true && typeof props.css === 'string' && // check if there is a css declaration
+      props.css.indexOf(':') !== -1) {
+        throw new Error("Strings are not allowed as css prop values, please wrap it in a css template literal from '@emotion/css' like this: css`" + props.css + "`");
+      }
+
+      var newProps = {};
+
+      for (var key in props) {
+        if (hasOwnProperty.call(props, key)) {
+          newProps[key] = props[key];
+        }
+      }
+
+      newProps[typePropName] = type; // TODO: check if this still works with all of those different JSX functions
+
+      var error = new Error();
+
+      if (error.stack) {
+        // chrome
+        var match = error.stack.match(/at (?:Object\.|Module\.|)(?:jsx|createEmotionProps).*\n\s+at (?:Object\.|)([A-Z][A-Za-z$]+) /);
+
+        if (!match) {
+          // safari and firefox
+          match = error.stack.match(/.*\n([A-Z][A-Za-z$]+)@/);
+        }
+
+        if (match) {
+          newProps[labelPropName] = sanitizeIdentifier(match[1]);
+        }
+      }
+
+
+      return newProps;
+    };
+
+    var Noop = function Noop() {
+      return null;
+    };
+
+    var render = function render(cache, props, theme, ref) {
+      var cssProp = theme === null ? props.css : props.css(theme); // so that using `css` from `emotion` and passing the result to the css prop works
+      // not passing the registered cache to serializeStyles because it would
+      // make certain babel optimisations not possible
+
+      if (typeof cssProp === 'string' && cache.registered[cssProp] !== undefined) {
+        cssProp = cache.registered[cssProp];
+      }
+
+      var type = props[typePropName];
+      var registeredStyles = [cssProp];
+      var className = '';
+
+      if (typeof props.className === 'string') {
+        className = utils.getRegisteredStyles(cache.registered, registeredStyles, props.className);
+      } else if (props.className != null) {
+        className = props.className + " ";
+      }
+
+      var serialized = serialize.serializeStyles(registeredStyles);
+
+      if (true && serialized.name.indexOf('-') === -1) {
+        var labelFromStack = props[labelPropName];
+
+        if (labelFromStack) {
+          serialized = serialize.serializeStyles([serialized, 'label:' + labelFromStack + ';']);
+        }
+      }
+
+      utils.insertStyles(cache, serialized, typeof type === 'string');
+
+      className += cache.key + "-" + serialized.name;
+      var newProps = {};
+
+      for (var key in props) {
+        if (hasOwnProperty.call(props, key) && key !== 'css' && key !== typePropName && (false || key !== labelPropName)) {
+          newProps[key] = props[key];
+        }
+      }
+
+      newProps.ref = ref;
+      newProps.className = className;
+      var ele = /*#__PURE__*/React.createElement(type, newProps);
+      var possiblyStyleElement = /*#__PURE__*/React.createElement(Noop, null);
+
+      return (/*#__PURE__*/React.createElement(React.Fragment, null, possiblyStyleElement, ele)
+      );
+    }; // eslint-disable-next-line no-undef
+
+
+    var Emotion = /* #__PURE__ */withEmotionCache(function (props, cache, ref) {
+      if (typeof props.css === 'function') {
+        return (/*#__PURE__*/React.createElement(ThemeContext.Consumer, null, function (theme) {
+            return render(cache, props, theme, ref);
+          })
+        );
+      }
+
+      return render(cache, props, null, ref);
+    });
+
+    Emotion.displayName = 'EmotionCssPropInternal';
+
+
+    exports.CacheProvider = CacheProvider;
+    exports.Emotion = Emotion;
+    exports.ThemeContext = ThemeContext;
+    exports.createEmotionProps = createEmotionProps;
+    exports.hasOwnProperty = hasOwnProperty;
+    exports.withEmotionCache = withEmotionCache;
+  }
+});
+
+'use strict';
+
+Liferay.Loader.define('@career-ui-job-advertisement-public-overview$emotion/css@10.0.27/dist/css.browser.cjs', ['module', 'exports', 'require', '@career-ui-job-advertisement-public-overview$emotion/serialize'], function (module, exports, require) {
+  var define = undefined;
+  var global = window;
+  {
+    Object.defineProperty(exports, '__esModule', { value: true });
+
+    var serialize = require('@career-ui-job-advertisement-public-overview$emotion/serialize');
+
+    function css() {
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      return serialize.serializeStyles(args);
+    }
+
+    exports.default = css;
+  }
+});
+
+Liferay.Loader.define('@career-ui-job-advertisement-public-overview$emotion/css@10.0.27/dist/css.cjs', ['module', 'exports', 'require', './css.browser.cjs'], function (module, exports, require) {
+  var define = undefined;
+  var global = window;
+  {
+    /* redirected by alias field(s) in  */
+    module.exports = require('./css.browser.cjs');
+  }
+});
+
+'use strict';
+
+Liferay.Loader.define('@career-ui-job-advertisement-public-overview$emotion/core@10.3.1/dist/core.browser.cjs', ['module', 'exports', 'require', '@career-ui-job-advertisement-public-overview$babel/runtime/helpers/inheritsLoose', 'career-ui-job-advertisement-public-overview$react', '@career-ui-job-advertisement-public-overview$emotion/cache', './emotion-element-3a21e59a.browser.cjs', '@career-ui-job-advertisement-public-overview$emotion/utils', '@career-ui-job-advertisement-public-overview$emotion/serialize', '@career-ui-job-advertisement-public-overview$emotion/sheet', '@career-ui-job-advertisement-public-overview$emotion/css'], function (module, exports, require) {
+  var define = undefined;
+  var global = window;
+  {
+    Object.defineProperty(exports, '__esModule', { value: true });
+
+    var _inheritsLoose = require('@career-ui-job-advertisement-public-overview$babel/runtime/helpers/inheritsLoose');
+    var React = require('career-ui-job-advertisement-public-overview$react');
+    require('@career-ui-job-advertisement-public-overview$emotion/cache');
+    var emotionElement = require('./emotion-element-3a21e59a.browser.cjs');
+    var utils = require('@career-ui-job-advertisement-public-overview$emotion/utils');
+    var serialize = require('@career-ui-job-advertisement-public-overview$emotion/serialize');
+    var sheet = require('@career-ui-job-advertisement-public-overview$emotion/sheet');
+    var css = require('@career-ui-job-advertisement-public-overview$emotion/css');
+
+    function _interopDefault(e) {
+      return e && e.__esModule ? e : { 'default': e };
+    }
+
+    var _inheritsLoose__default = /*#__PURE__*/_interopDefault(_inheritsLoose);
+    var css__default = /*#__PURE__*/_interopDefault(css);
+
+    var jsx = function jsx(type, props) {
+      var args = arguments;
+
+      if (props == null || !emotionElement.hasOwnProperty.call(props, 'css')) {
+        // $FlowFixMe
+        return React.createElement.apply(undefined, args);
+      }
+
+      var argsLength = args.length;
+      var createElementArgArray = new Array(argsLength);
+      createElementArgArray[0] = emotionElement.Emotion;
+      createElementArgArray[1] = emotionElement.createEmotionProps(type, props);
+
+      for (var i = 2; i < argsLength; i++) {
+        createElementArgArray[i] = args[i];
+      } // $FlowFixMe
+
+
+      return React.createElement.apply(null, createElementArgArray);
+    };
+
+    var warnedAboutCssPropForGlobal = false;
+    var Global = /* #__PURE__ */emotionElement.withEmotionCache(function (props, cache) {
+      if (true && !warnedAboutCssPropForGlobal && ( // check for className as well since the user is
+      // probably using the custom createElement which
+      // means it will be turned into a className prop
+      // $FlowFixMe I don't really want to add it to the type since it shouldn't be used
+      props.className || props.css)) {
+        console.error("It looks like you're using the css prop on Global, did you mean to use the styles prop instead?");
+        warnedAboutCssPropForGlobal = true;
+      }
+
+      var styles = props.styles;
+
+      if (typeof styles === 'function') {
+        return (/*#__PURE__*/React.createElement(emotionElement.ThemeContext.Consumer, null, function (theme) {
+            var serialized = serialize.serializeStyles([styles(theme)]);
+            return (/*#__PURE__*/React.createElement(InnerGlobal, {
+                serialized: serialized,
+                cache: cache
+              })
+            );
+          })
+        );
+      }
+
+      var serialized = serialize.serializeStyles([styles]);
+      return (/*#__PURE__*/React.createElement(InnerGlobal, {
+          serialized: serialized,
+          cache: cache
+        })
+      );
+    });
+
+    // maintain place over rerenders.
+    // initial render from browser, insertBefore context.sheet.tags[0] or if a style hasn't been inserted there yet, appendChild
+    // initial client-side render from SSR, use place of hydrating tag
+    var InnerGlobal = /*#__PURE__*/function (_React$Component) {
+      _inheritsLoose__default['default'](InnerGlobal, _React$Component);
+
+      function InnerGlobal(props, context, updater) {
+        return _React$Component.call(this, props, context, updater) || this;
+      }
+
+      var _proto = InnerGlobal.prototype;
+
+      _proto.componentDidMount = function componentDidMount() {
+        this.sheet = new sheet.StyleSheet({
+          key: this.props.cache.key + "-global",
+          nonce: this.props.cache.sheet.nonce,
+          container: this.props.cache.sheet.container
+        }); // $FlowFixMe
+
+        var node = document.querySelector("style[data-emotion-" + this.props.cache.key + "=\"" + this.props.serialized.name + "\"]");
+
+        if (node !== null) {
+          this.sheet.tags.push(node);
+        }
+
+        if (this.props.cache.sheet.tags.length) {
+          this.sheet.before = this.props.cache.sheet.tags[0];
+        }
+
+        this.insertStyles();
+      };
+
+      _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+        if (prevProps.serialized.name !== this.props.serialized.name) {
+          this.insertStyles();
+        }
+      };
+
+      _proto.insertStyles = function insertStyles() {
+        if (this.props.serialized.next !== undefined) {
+          // insert keyframes
+          utils.insertStyles(this.props.cache, this.props.serialized.next, true);
+        }
+
+        if (this.sheet.tags.length) {
+          // if this doesn't exist then it will be null so the style element will be appended
+          var element = this.sheet.tags[this.sheet.tags.length - 1].nextElementSibling;
+          this.sheet.before = element;
+          this.sheet.flush();
+        }
+
+        this.props.cache.insert("", this.props.serialized, this.sheet, false);
+      };
+
+      _proto.componentWillUnmount = function componentWillUnmount() {
+        this.sheet.flush();
+      };
+
+      _proto.render = function render() {
+
+        return null;
+      };
+
+      return InnerGlobal;
+    }(React.Component);
+
+    var keyframes = function keyframes() {
+      var insertable = css__default['default'].apply(void 0, arguments);
+      var name = "animation-" + insertable.name; // $FlowFixMe
+
+      return {
+        name: name,
+        styles: "@keyframes " + name + "{" + insertable.styles + "}",
+        anim: 1,
+        toString: function toString() {
+          return "_EMO_" + this.name + "_" + this.styles + "_EMO_";
+        }
+      };
+    };
+
+    var classnames = function classnames(args) {
+      var len = args.length;
+      var i = 0;
+      var cls = '';
+
+      for (; i < len; i++) {
+        var arg = args[i];
+        if (arg == null) continue;
+        var toAdd = void 0;
+
+        switch (typeof arg) {
+          case 'boolean':
+            break;
+
+          case 'object':
+            {
+              if (Array.isArray(arg)) {
+                toAdd = classnames(arg);
+              } else {
+                toAdd = '';
+
+                for (var k in arg) {
+                  if (arg[k] && k) {
+                    toAdd && (toAdd += ' ');
+                    toAdd += k;
+                  }
+                }
+              }
+
+              break;
+            }
+
+          default:
+            {
+              toAdd = arg;
+            }
+        }
+
+        if (toAdd) {
+          cls && (cls += ' ');
+          cls += toAdd;
+        }
+      }
+
+      return cls;
+    };
+
+    function merge(registered, css, className) {
+      var registeredStyles = [];
+      var rawClassName = utils.getRegisteredStyles(registered, registeredStyles, className);
+
+      if (registeredStyles.length < 2) {
+        return className;
+      }
+
+      return rawClassName + css(registeredStyles);
+    }
+
+    var Noop = function Noop() {
+      return null;
+    };
+
+    var ClassNames = emotionElement.withEmotionCache(function (props, context) {
+      return (/*#__PURE__*/React.createElement(emotionElement.ThemeContext.Consumer, null, function (theme) {
+          var hasRendered = false;
+
+          var css = function css() {
+            if (hasRendered && true) {
+              throw new Error('css can only be used during render');
+            }
+
+            for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+              args[_key] = arguments[_key];
+            }
+
+            var serialized = serialize.serializeStyles(args, context.registered);
+
+            {
+              utils.insertStyles(context, serialized, false);
+            }
+
+            return context.key + "-" + serialized.name;
+          };
+
+          var cx = function cx() {
+            if (hasRendered && true) {
+              throw new Error('cx can only be used during render');
+            }
+
+            for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+              args[_key2] = arguments[_key2];
+            }
+
+            return merge(context.registered, css, classnames(args));
+          };
+
+          var ele = props.children({
+            css: css,
+            cx: cx,
+            theme: theme
+          });
+          hasRendered = true;
+          var possiblyStyleElement = /*#__PURE__*/React.createElement(Noop, null);
+
+          return (/*#__PURE__*/React.createElement(React.Fragment, null, possiblyStyleElement, ele)
+          );
+        })
+      );
+    });
+
+    exports.CacheProvider = emotionElement.CacheProvider;
+    exports.ThemeContext = emotionElement.ThemeContext;
+    exports.withEmotionCache = emotionElement.withEmotionCache;
+    Object.defineProperty(exports, 'css', {
+      enumerable: true,
+      get: function () {
+        return css__default['default'];
+      }
+    });
+    exports.ClassNames = ClassNames;
+    exports.Global = Global;
+    exports.createElement = jsx;
+    exports.jsx = jsx;
+    exports.keyframes = keyframes;
+  }
+});
+
+Liferay.Loader.define('@career-ui-job-advertisement-public-overview$emotion/core@10.3.1/dist/core.cjs', ['module', 'exports', 'require', './core.browser.cjs'], function (module, exports, require) {
+  var define = undefined;
+  var global = window;
+  {
+    /* redirected by alias field(s) in  */
+    module.exports = require('./core.browser.cjs');
+  }
+});
+
+Liferay.Loader.define("@career-ui-job-advertisement-public-overview$babel/runtime@7.22.6/helpers/taggedTemplateLiteral", ['module', 'exports', 'require'], function (module, exports, require) {
+  var define = undefined;
+  var global = window;
+  {
+    function _taggedTemplateLiteral(strings, raw) {
+      if (!raw) {
+        raw = strings.slice(0);
+      }
+      return Object.freeze(Object.defineProperties(strings, {
+        raw: {
+          value: Object.freeze(raw)
+        }
+      }));
+    }
+    module.exports = _taggedTemplateLiteral, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  }
+});
+
+'use strict';
+
+Liferay.Loader.define("career-ui-job-advertisement-public-overview$react-input-autosize@3.0.0/lib/AutosizeInput", ['module', 'exports', 'require', 'career-ui-job-advertisement-public-overview$react', 'career-ui-job-advertisement-public-overview$prop-types'], function (module, exports, require) {
+	var define = undefined;
+	var global = window;
+	{
+		Object.defineProperty(exports, "__esModule", {
+			value: true
+		});
+
+		var _extends = Object.assign || function (target) {
+			for (var i = 1; i < arguments.length; i++) {
+				var source = arguments[i];for (var key in source) {
+					if (Object.prototype.hasOwnProperty.call(source, key)) {
+						target[key] = source[key];
+					}
+				}
+			}return target;
+		};
+
+		var _createClass = function () {
+			function defineProperties(target, props) {
+				for (var i = 0; i < props.length; i++) {
+					var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+				}
+			}return function (Constructor, protoProps, staticProps) {
+				if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+			};
+		}();
+
+		var _react = require("career-ui-job-advertisement-public-overview$react");
+
+		var _react2 = _interopRequireDefault(_react);
+
+		var _propTypes = require("career-ui-job-advertisement-public-overview$prop-types");
+
+		var _propTypes2 = _interopRequireDefault(_propTypes);
+
+		function _interopRequireDefault(obj) {
+			return obj && obj.__esModule ? obj : { default: obj };
+		}
+
+		function _objectWithoutProperties(obj, keys) {
+			var target = {};for (var i in obj) {
+				if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
+			}return target;
+		}
+
+		function _classCallCheck(instance, Constructor) {
+			if (!(instance instanceof Constructor)) {
+				throw new TypeError("Cannot call a class as a function");
+			}
+		}
+
+		function _possibleConstructorReturn(self, call) {
+			if (!self) {
+				throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+			}return call && (typeof call === "object" || typeof call === "function") ? call : self;
+		}
+
+		function _inherits(subClass, superClass) {
+			if (typeof superClass !== "function" && superClass !== null) {
+				throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+			}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+		}
+
+		var sizerStyle = {
+			position: 'absolute',
+			top: 0,
+			left: 0,
+			visibility: 'hidden',
+			height: 0,
+			overflow: 'scroll',
+			whiteSpace: 'pre'
+		};
+
+		var INPUT_PROPS_BLACKLIST = ['extraWidth', 'injectStyles', 'inputClassName', 'inputRef', 'inputStyle', 'minWidth', 'onAutosize', 'placeholderIsMinWidth'];
+
+		var cleanInputProps = function cleanInputProps(inputProps) {
+			INPUT_PROPS_BLACKLIST.forEach(function (field) {
+				return delete inputProps[field];
+			});
+			return inputProps;
+		};
+
+		var copyStyles = function copyStyles(styles, node) {
+			node.style.fontSize = styles.fontSize;
+			node.style.fontFamily = styles.fontFamily;
+			node.style.fontWeight = styles.fontWeight;
+			node.style.fontStyle = styles.fontStyle;
+			node.style.letterSpacing = styles.letterSpacing;
+			node.style.textTransform = styles.textTransform;
+		};
+
+		var isIE = typeof window !== 'undefined' && window.navigator ? /MSIE |Trident\/|Edge\//.test(window.navigator.userAgent) : false;
+
+		var generateId = function generateId() {
+			// we only need an auto-generated ID for stylesheet injection, which is only
+			// used for IE. so if the browser is not IE, this should return undefined.
+			return isIE ? '_' + Math.random().toString(36).substr(2, 12) : undefined;
+		};
+
+		var AutosizeInput = function (_Component) {
+			_inherits(AutosizeInput, _Component);
+
+			_createClass(AutosizeInput, null, [{
+				key: 'getDerivedStateFromProps',
+				value: function getDerivedStateFromProps(props, state) {
+					var id = props.id;
+
+					return id !== state.prevId ? { inputId: id || generateId(), prevId: id } : null;
+				}
+			}]);
+
+			function AutosizeInput(props) {
+				_classCallCheck(this, AutosizeInput);
+
+				var _this = _possibleConstructorReturn(this, (AutosizeInput.__proto__ || Object.getPrototypeOf(AutosizeInput)).call(this, props));
+
+				_this.inputRef = function (el) {
+					_this.input = el;
+					if (typeof _this.props.inputRef === 'function') {
+						_this.props.inputRef(el);
+					}
+				};
+
+				_this.placeHolderSizerRef = function (el) {
+					_this.placeHolderSizer = el;
+				};
+
+				_this.sizerRef = function (el) {
+					_this.sizer = el;
+				};
+
+				_this.state = {
+					inputWidth: props.minWidth,
+					inputId: props.id || generateId(),
+					prevId: props.id
+				};
+				return _this;
+			}
+
+			_createClass(AutosizeInput, [{
+				key: 'componentDidMount',
+				value: function componentDidMount() {
+					this.mounted = true;
+					this.copyInputStyles();
+					this.updateInputWidth();
+				}
+			}, {
+				key: 'componentDidUpdate',
+				value: function componentDidUpdate(prevProps, prevState) {
+					if (prevState.inputWidth !== this.state.inputWidth) {
+						if (typeof this.props.onAutosize === 'function') {
+							this.props.onAutosize(this.state.inputWidth);
+						}
+					}
+					this.updateInputWidth();
+				}
+			}, {
+				key: 'componentWillUnmount',
+				value: function componentWillUnmount() {
+					this.mounted = false;
+				}
+			}, {
+				key: 'copyInputStyles',
+				value: function copyInputStyles() {
+					if (!this.mounted || !window.getComputedStyle) {
+						return;
+					}
+					var inputStyles = this.input && window.getComputedStyle(this.input);
+					if (!inputStyles) {
+						return;
+					}
+					copyStyles(inputStyles, this.sizer);
+					if (this.placeHolderSizer) {
+						copyStyles(inputStyles, this.placeHolderSizer);
+					}
+				}
+			}, {
+				key: 'updateInputWidth',
+				value: function updateInputWidth() {
+					if (!this.mounted || !this.sizer || typeof this.sizer.scrollWidth === 'undefined') {
+						return;
+					}
+					var newInputWidth = void 0;
+					if (this.props.placeholder && (!this.props.value || this.props.value && this.props.placeholderIsMinWidth)) {
+						newInputWidth = Math.max(this.sizer.scrollWidth, this.placeHolderSizer.scrollWidth) + 2;
+					} else {
+						newInputWidth = this.sizer.scrollWidth + 2;
+					}
+					// add extraWidth to the detected width. for number types, this defaults to 16 to allow for the stepper UI
+					var extraWidth = this.props.type === 'number' && this.props.extraWidth === undefined ? 16 : parseInt(this.props.extraWidth) || 0;
+					newInputWidth += extraWidth;
+					if (newInputWidth < this.props.minWidth) {
+						newInputWidth = this.props.minWidth;
+					}
+					if (newInputWidth !== this.state.inputWidth) {
+						this.setState({
+							inputWidth: newInputWidth
+						});
+					}
+				}
+			}, {
+				key: 'getInput',
+				value: function getInput() {
+					return this.input;
+				}
+			}, {
+				key: 'focus',
+				value: function focus() {
+					this.input.focus();
+				}
+			}, {
+				key: 'blur',
+				value: function blur() {
+					this.input.blur();
+				}
+			}, {
+				key: 'select',
+				value: function select() {
+					this.input.select();
+				}
+			}, {
+				key: 'renderStyles',
+				value: function renderStyles() {
+					// this method injects styles to hide IE's clear indicator, which messes
+					// with input size detection. the stylesheet is only injected when the
+					// browser is IE, and can also be disabled by the `injectStyles` prop.
+					var injectStyles = this.props.injectStyles;
+
+					return isIE && injectStyles ? _react2.default.createElement('style', { dangerouslySetInnerHTML: {
+							__html: 'input#' + this.state.inputId + '::-ms-clear {display: none;}'
+						} }) : null;
+				}
+			}, {
+				key: 'render',
+				value: function render() {
+					var sizerValue = [this.props.defaultValue, this.props.value, ''].reduce(function (previousValue, currentValue) {
+						if (previousValue !== null && previousValue !== undefined) {
+							return previousValue;
+						}
+						return currentValue;
+					});
+
+					var wrapperStyle = _extends({}, this.props.style);
+					if (!wrapperStyle.display) wrapperStyle.display = 'inline-block';
+
+					var inputStyle = _extends({
+						boxSizing: 'content-box',
+						width: this.state.inputWidth + 'px'
+					}, this.props.inputStyle);
+
+					var inputProps = _objectWithoutProperties(this.props, []);
+
+					cleanInputProps(inputProps);
+					inputProps.className = this.props.inputClassName;
+					inputProps.id = this.state.inputId;
+					inputProps.style = inputStyle;
+
+					return _react2.default.createElement('div', { className: this.props.className, style: wrapperStyle }, this.renderStyles(), _react2.default.createElement('input', _extends({}, inputProps, { ref: this.inputRef })), _react2.default.createElement('div', { ref: this.sizerRef, style: sizerStyle }, sizerValue), this.props.placeholder ? _react2.default.createElement('div', { ref: this.placeHolderSizerRef, style: sizerStyle }, this.props.placeholder) : null);
+				}
+			}]);
+
+			return AutosizeInput;
+		}(_react.Component);
+
+		AutosizeInput.propTypes = {
+			className: _propTypes2.default.string, // className for the outer element
+			defaultValue: _propTypes2.default.any, // default field value
+			extraWidth: _propTypes2.default.oneOfType([// additional width for input element
+			_propTypes2.default.number, _propTypes2.default.string]),
+			id: _propTypes2.default.string, // id to use for the input, can be set for consistent snapshots
+			injectStyles: _propTypes2.default.bool, // inject the custom stylesheet to hide clear UI, defaults to true
+			inputClassName: _propTypes2.default.string, // className for the input element
+			inputRef: _propTypes2.default.func, // ref callback for the input element
+			inputStyle: _propTypes2.default.object, // css styles for the input element
+			minWidth: _propTypes2.default.oneOfType([// minimum width for input element
+			_propTypes2.default.number, _propTypes2.default.string]),
+			onAutosize: _propTypes2.default.func, // onAutosize handler: function(newWidth) {}
+			onChange: _propTypes2.default.func, // onChange handler: function(event) {}
+			placeholder: _propTypes2.default.string, // placeholder text
+			placeholderIsMinWidth: _propTypes2.default.bool, // don't collapse size to less than the placeholder
+			style: _propTypes2.default.object, // css styles for the outer element
+			value: _propTypes2.default.any // field value
+		};
+		AutosizeInput.defaultProps = {
+			minWidth: 1,
+			injectStyles: true
+		};
+
+		exports.default = AutosizeInput;
+	}
+});
+
