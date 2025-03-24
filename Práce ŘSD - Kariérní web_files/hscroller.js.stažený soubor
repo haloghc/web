@@ -1,0 +1,144 @@
+define('hscroller', function () {
+
+    var defaultOpts = {
+        hscrollerId: "",
+        hscrollerHolderClass: "js-rsd-hscroller-holder",
+        leftButtonsClass: "js-rsd-hscroller-left-button",
+        rightButtonsClass: "js-rsd-hscroller-right-button"
+    }
+
+
+    var HScroller = function(hscrollerListWidth, hscrollerStep, hscrollerHolder, hscrollerVisibleArea, leftButtons, rightButtons){
+            this.hscrollerListWidth = hscrollerListWidth;
+            this.hscrollerStep = hscrollerStep;
+            this.hscrollerHolder = hscrollerHolder;
+            this.hscrollerVisibleArea = hscrollerVisibleArea;
+            this.leftButtons = leftButtons;
+            this.rightButtons = rightButtons;
+        }
+
+    HScroller.prototype._PxNumToNum = function(value) {
+        return parseInt(value.replace("px", ""));
+    }
+
+    HScroller.prototype._getCurrentLeft = function() {
+        var style = this.hscrollerVisibleArea.style || {"left": "0px"};
+        var left = style.left || "0px";
+        return this._PxNumToNum(left);
+    }
+
+    HScroller.prototype._computeLeft = function() {
+        var newLeft = this._getCurrentLeft() + this.hscrollerStep;
+        return newLeft <= 0 ? newLeft : 0;
+    }
+
+    HScroller.prototype._computeRight = function() {
+        var leftLimit = this.hscrollerHolder.offsetWidth - this._PxNumToNum(this.hscrollerVisibleArea.style.width)
+        var newLeft = this._getCurrentLeft() - this.hscrollerStep;
+        return newLeft >= leftLimit ? newLeft : leftLimit;
+    }
+
+    HScroller.prototype.left = function() {
+        var newLeft = this._computeLeft();
+        this.hscrollerVisibleArea.style.left = newLeft+"px";
+        this.handleShowButtons();
+    }
+
+    HScroller.prototype.right = function() {
+        var newLeft = this._computeRight();
+        this.hscrollerVisibleArea.style.left = newLeft+"px";
+        this.handleShowButtons();
+    }
+
+    HScroller.prototype._disableButtons = function(buttons) {
+        var buttonsLength = buttons.length;
+        for (var i = 0; i < buttonsLength; i++) {
+            var button = buttons[i];
+            button.classList.add("disabled");
+        }
+    }
+
+    HScroller.prototype._enableButtons = function(buttons) {
+        var buttonsLength = buttons.length;
+        for (var i = 0; i < buttonsLength; i++) {
+            var button = buttons[i];
+            button.classList.remove("disabled");
+        }
+    }
+
+    HScroller.prototype._hideButtons = function(buttons) {
+            var buttonsLength = buttons.length;
+            for (var i = 0; i < buttonsLength; i++) {
+                var button = buttons[i];
+                button.style.display = "none";
+            }
+        }
+
+    HScroller.prototype.handleShowButtons = function() {
+        var leftLimit = this.hscrollerHolder.offsetWidth - this._PxNumToNum(this.hscrollerVisibleArea.style.width);
+        var currentLeft = this._getCurrentLeft();
+
+        currentLeft == 0 ? this._disableButtons(this.leftButtons) : this._enableButtons(this.leftButtons) ;
+        currentLeft == leftLimit ? this._disableButtons(this.rightButtons) : this._enableButtons(this.rightButtons) ;
+
+        if(currentLeft == 0 && currentLeft == leftLimit){
+            this._hideButtons(this.leftButtons);
+            this._hideButtons(this.rightButtons);
+        }
+    }
+
+
+    var _initOnClickListener = function(buttons, action) {
+        var buttonsLength = buttons.length;
+        for (var i = 0; i < buttonsLength; i++) {
+            var button = buttons[i];
+            button.addEventListener('mousedown', function(e){
+                if (e.detail > 1){
+                    e.preventDefault();
+                }
+            });
+            button.addEventListener('click',function (e){action();});
+        }
+    }
+
+
+    var _initHScroller = function(hscrollerListWidth, hscrollerStep, hscrollerHolder, hscrollerVisibleArea, leftButtons, rightButtons){
+
+        var hscrollerEnvInstance = new HScroller(hscrollerListWidth, hscrollerStep, hscrollerHolder, hscrollerVisibleArea, leftButtons, rightButtons);
+        hscrollerEnvInstance.handleShowButtons();
+
+        _initOnClickListener(leftButtons, function(){hscrollerEnvInstance.left()});
+        _initOnClickListener(rightButtons, function(){hscrollerEnvInstance.right()});
+
+    }
+
+    var _findElementForHScroller = function(opts) {
+
+         var hscrollerEnv = document.getElementById(opts.hscrollerId);
+         var hscrollerHolders = hscrollerEnv.getElementsByClassName(opts.hscrollerHolderClass);
+         var leftButtons = hscrollerEnv.getElementsByClassName(opts.leftButtonsClass);
+         var rightButtons = hscrollerEnv.getElementsByClassName(opts.rightButtonsClass);
+         if(hscrollerHolders && hscrollerHolders.length > 0 && leftButtons && leftButtons.length > 0 && rightButtons && rightButtons.length > 0){
+             var hscrollerHolder = hscrollerHolders[0];
+             var hscrollerVisibleArea = hscrollerHolder.getElementsByTagName("ul")[0]
+
+             var hscrollerListWidth = parseInt(hscrollerHolder.getAttribute("data-rsd-hscroller-list"));
+             var hscrollerStep = parseInt(hscrollerHolder.getAttribute("data-rsd-hscroller-step"));
+
+            _initHScroller(hscrollerListWidth, hscrollerStep, hscrollerHolder, hscrollerVisibleArea, leftButtons, rightButtons);
+
+         }
+
+    }
+
+    var RSDHScroller = function(newOpts) {
+            this.opts = Object.assign(defaultOpts, newOpts);
+    }
+
+    RSDHScroller.prototype.initRSDHScroller = function() {
+        _findElementForHScroller(this.opts);
+    }
+
+    return RSDHScroller;
+
+});
